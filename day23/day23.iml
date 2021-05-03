@@ -11,7 +11,6 @@
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="lombok" level="project" />
     <orderEntry type="library" name="fastjson-1.2.76" level="project" />
-    <orderEntry type="library" name="mysql-connector-java-5.1.37-bin" level="project" />
     <orderEntry type="module-library" scope="TEST">
       <library name="JUnit4">
         <CLASSES>

@@ -13,13 +13,11 @@ public class PropUtil {
     static {
         try {
             properties = new Properties();
-            properties.load(PropUtil.class.getClassLoader().getResourceAsStream("jdbc.properties"));
-            Class.forName(getValue("driverClassName"));
-        } catch (IOException | ClassNotFoundException e) {
+            properties.load(PropUtil.class.getClassLoader().getResourceAsStream("mgr.properties"));
+        } catch (IOException e ) {
             e.printStackTrace();
         }
     }
-
 
     public static String getValue(String key) {
         Objects.requireNonNull(key);

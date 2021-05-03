@@ -5,10 +5,7 @@ import org.junit.Test;
 import java.math.BigDecimal;
 import java.math.BigInteger;
 import java.net.InetAddress;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Random;
+import java.util.*;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.stream.IntStream;
 
@@ -28,6 +25,8 @@ public class ReviewTest {
         System.out.println(anInt);
         byte[] bytes = new byte[]{-33, -44, 22, -55, 99, 30, 22, 55};
         ArrayList<String> list = new ArrayList<>();
+
+//        map.put(1,"333");
         list.add("0");
         list.add("1");
         list.add("2");
@@ -47,8 +46,8 @@ public class ReviewTest {
         String string = new BigInteger(1, bytes).toString(16).toUpperCase();
         StringBuilder builder = new StringBuilder();
         for (byte aByte : bytes) {
-            int lowValue = aByte & 15;
-            int highValue = (aByte >> 4)& 15;
+            int lowValue = aByte & 0xf;
+            int highValue = (aByte >> 4)& 0xf;
             builder.append(list.get(highValue));
             builder.append(list.get(lowValue));
         }
@@ -77,6 +76,11 @@ public class ReviewTest {
         ThreadLocalRandom current = ThreadLocalRandom.current();
         IntStream ints = random.ints(5, 1, 31);
         ints.forEach(System.out::println);
+    }
+    @Test
+    public void test3(){
+        HashMap<Integer, String> map = new HashMap<>(10);
+        map.put(1,"333");
     }
 
 }
